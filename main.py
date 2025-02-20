@@ -102,4 +102,5 @@ def logout():
     return redirect(url_for("login"))
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=int(os.getenv("PORT", 8080)))
+    port = int(os.getenv("PORT", 5000))  # Default to 5000 if Railway doesn't set PORT
+    app.run(host="0.0.0.0", port=port, debug=True)
