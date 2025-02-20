@@ -1,0 +1,23 @@
+{
+    "last_updated": "2025-02-20 06:56:07",
+    "rates": [
+        {
+            "id": 3,
+            "date": "2025-02-02",
+            "quality": "Medium",
+            "price": "6"
+        },
+        {
+            "id": 4,
+            "date": "2025-02-10",
+            "quality": "Medium",
+            "price": "2000"
+        },
+        {
+            "id": 5,
+            "date": "2025-02-17",
+            "quality": "Thick",
+            "price": "33000"
+        }
+    ]
+}

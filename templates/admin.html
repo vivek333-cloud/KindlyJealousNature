@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Update Poha Rates</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h2>Admin Panel - Update Poha Rates</h2>
+
+    <form method="POST">
+        <input type="date" name="date" required>
+        <select name="quality">
+            <option value="Thick">Thick</option>
+            <option value="Medium">Medium</option>
+            <option value="Thin">Thin</option>
+        </select>
+        <input type="number" name="price" placeholder="Price (₹/Quintal)" required>
+        <button type="submit">Update Rate</button>
+    </form>
+
+    <h3>Existing Rates</h3>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Quality</th>
+            <th>Price</th>
+            <th>Actions</th>
+        </tr>
+        {% for rate in rates %}
+        <tr>
+            <td>{{ rate.date }}</td>
+            <td>{{ rate.quality }}</td>
+            <td>₹{{ rate.price }}</td>
+            <td>
+                <a href="/edit/{{ rate.id }}"><button class="edit">Edit</button></a>
+                <a href="/delete/{{ rate.id }}" onclick="return confirm('Are you sure?');">
+                    <button class="delete">Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <br>
+    <a href="/">Go Back</a>
+</body>
+</html>

@@ -1,0 +1,215 @@
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* General Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #333;
+}
+
+/* Header */
+h1, h2 {
+    color: #222;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* Form Container */
+form {
+    max-width: 400px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+form:hover {
+    transform: scale(1.02);
+}
+
+/* Inputs & Buttons */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus, select:focus {
+    border-color: #007bff;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    background: #007bff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+/* Cancel Button */
+.cancel-btn {
+    display: inline-block;
+    background: #dc3545;
+    padding: 12px 15px;
+    color: white;
+    border-radius: 6px;
+    margin-top: 15px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.cancel-btn:hover {
+    background: #b32d3b;
+}
+
+/* Table Styling */
+table {
+    width: 90%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background: #007bff;
+    color: white;
+}
+
+/* Action Buttons */
+.edit {
+    background: #ffc107;
+    border: none;
+    padding: 8px 12px;
+    color: black;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.edit:hover {
+    background: #e0a800;
+}
+
+.delete {
+    background: #dc3545;
+    border: none;
+    padding: 8px 12px;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+.delete:hover {
+    background: #b32d3b;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    form {
+        width: 90%;
+    }
+
+    table {
+        width: 100%;
+    }
+}
+/* Light Mode (Default) */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: #222;
+    color: #fff;
+}
+
+/* Dark Mode Form */
+.dark-mode form {
+    background-color: #333;
+    color: #fff;
+    border: 1px solid #555;
+}
+
+/* Dark Mode Buttons */
+.dark-mode button {
+    background-color: #007bff;
+    color: white;
+}
+
+.dark-mode button:hover {
+    background-color: #0056b3;
+}
+
+.dark-mode .cancel-btn {
+    background-color: #dc3545;
+}
+/* Dark Mode Fix */
+.dark-mode {
+    background-color: #121212;
+    color: white;
+}
+
+.dark-mode .navbar, .dark-mode .container {
+    background-color: #1e1e1e;
+    color: white;
+}
+
+.dark-mode table {
+    background-color: #2a2a2a;
+    color: white;
+    border-color: #444;
+}
+
+.dark-mode th, .dark-mode td {
+    color: white;
+    border-color: #555;
+}
+
+.dark-mode th {
+    background-color: #444;
+}
+
+.dark-mode a {
+    color: #00bfff;
+}
+
+.dark-mode .admin-btn, 
+.dark-mode .login-btn, 
+.dark-mode .logout-btn {
+    background-color: #555;
+    color: white;
+}

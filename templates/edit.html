@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Poha Rate</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}?v={{ cache_buster }}">
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; padding: 20px; transition: background 0.3s, color 0.3s; }
+        form { max-width: 400px; margin: auto; background: #f8f8f8; padding: 20px; border-radius: 5px; }
+        input, select { width: 100%; padding: 10px; margin: 10px 0; }
+        button { background: #28a745; color: white; padding: 10px; border: none; cursor: pointer; }
+        .cancel-btn { background: #dc3545; text-decoration: none; padding: 10px 15px; color: white; display: inline-block; border-radius: 5px; margin-top: 10px; }
+        
+        /* Dark Mode */
+        body.dark-mode { background-color: #222; color: #fff; }
+        .dark-mode form { background: #333; color: #fff; border: 1px solid #555; }
+        .dark-mode button { background-color: #007bff; color: white; }
+        .dark-mode button:hover { background-color: #0056b3; }
+        .dark-mode .cancel-btn { background-color: #dc3545; }
+    </style>
+</head>
+<body>
+    <button id="toggleDarkMode">🌙 Toggle Dark Mode</button>
+
+    <h2>Edit Poha Rate</h2>
+
+    <form method="POST">
+        <label>Date:</label>
+        <input type="date" name="date" value="{{ rate.date }}" required>
+
+        <label>Quality:</label>
+        <select name="quality">
+            <option value="Thick" {% if rate.quality == "Thick" %}selected{% endif %}>Thick</option>
+            <option value="Medium" {% if rate.quality == "Medium" %}selected{% endif %}>Medium</option>
+            <option value="Thin" {% if rate.quality == "Thin" %}selected{% endif %}>Thin</option>
+        </select>
+
+        <label>Price (₹/Quintal):</label>
+        <input type="number" name="price" value="{{ rate.price }}" required>
+
+        <button type="submit">Save Changes</button>
+    </form>
+
+    <a href="/admin" class="cancel-btn">Cancel</a>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toggleButton = document.getElementById("toggleDarkMode");
+            const body = document.body;
+
+            // Check if Dark Mode was previously enabled
+            if (localStorage.getItem("darkMode") === "enabled") {
+                body.classList.add("dark-mode");
+            }
+
+            toggleButton.addEventListener("click", () => {
+                body.classList.toggle("dark-mode");
+
+                // Save mode preference in Local Storage
+                if (body.classList.contains("dark-mode")) {
+                    localStorage.setItem("darkMode", "enabled");
+                } else {
+                    localStorage.setItem("darkMode", "disabled");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
